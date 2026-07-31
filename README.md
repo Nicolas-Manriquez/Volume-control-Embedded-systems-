@@ -1,2 +1,4 @@
-# Volume-control-Embedded-systems-
-Analog volume control for computers using an ESP32-C6 and a standard Arduino-style potentiometer. Designed as a modular foundation for additional volume control methods (rotary encoders, touch sensors, remote controls, software interfaces, etc.), adaptable to different applications and setups.
+# Volume-control-Embedded-systems
+Analog volume control for computers using ESP32 and standard Arduino-style sensors. Designed as a modular foundation for additional volume control methods (rotary encoders, touch sensors, remote controls, software interfaces, etc.), adaptable to different applications and setups.
+
+The first project uses a xiao ESP32-C6 that reads the voltage send by a potentiometer, transforms it in a scale of 1 to 100 and softens this signal so it doesn't change the volume unwittingly. for the computer software, it's a python script that automatically detects and establish a connection with external hardware. The program uses specific libraries to scan system files for devices connected via serial ports, the process is embedded in the computer through a daemon in charge of incorporate the code permanently to an arch Linux system.
