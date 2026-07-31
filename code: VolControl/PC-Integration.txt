@@ -1,1 +1,30 @@
+First, a folder has to be made:
+mkdir -p ~/.config/systemd/user
 
+Then, create the file to which the daemon will refer:
+nano ~/.config/systemd/user/esp32-volumen.service
+
+In this file, add the following instructions:
+[Unit]
+Description=Control de volumen mediante ESP32
+[Service]
+ExecStart=/usr/bin/python ~/folder(*)/vol.py
+Restart=always
+RestartSec=2
+[Install]
+WantedBy=default.target
+
+folder(*) change this for the route to the python script
+
+To enable the service type this in the console:
+systemctl --user daemon-reload
+systemctl --user enable --now esp32-volumen.service
+
+If you want to check the state or stop the service:
+systemctl --user status esp32-volumen.service
+
+or
+
+systemctl --user stop esp32-volumen.service
+
+You have succesfully integrated your system to your PC
