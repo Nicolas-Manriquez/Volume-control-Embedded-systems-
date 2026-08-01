@@ -44,7 +44,7 @@ while True:
 
             volumen = max(0, min(100, volumen))
 
-            if abs(volumen - ultimo) >= 1:
+            if abs(volumen - ultimo) >= 2:
                 subprocess.run(
                     [
                         "wpctl",
